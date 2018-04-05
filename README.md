@@ -22,7 +22,8 @@ Contexto:
     JSON 02
         Contém:
           - Novo posicionamento do usuário no fluxo do chat
-          - Respostas preenchidas pelo usuário (número varia de acordo com o posicionamento no fluxo)
+          - Perguntas para o usuário (número varia de acordo com o posicionamento no fluxo)
+          - Números aproximados de desperdício de tempo e dinheiro
     
      End
           Armazena informações do fim do ciclo utilizando google cloud
