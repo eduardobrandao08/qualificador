@@ -4,16 +4,25 @@ APP calculadora com indicadores da construção civil.
 Formato de chat, utilizando máquina de estados para o fluxo do chat.
 
 Ir em edit para visualizar Estrutura
+
 Estrutura:
-    ---------                  ---------               ---------
-   /         /    ------>     /         /             /         /
+
+    ---------                  ---------               ---------  
+   /         /    ------>     /         /             /         /   
    /         /    JSON 01     /         /     End     /         /
    /   USER  /                /   API   /    ----->   / Storage /
    /   Site  /    JSON 02     /         /             /         /
    /         /    <-------    /         /             /         /
     ---------                  ---------               ---------
-
     
+USER/Site - Envia "JSON1" e recebe "JSON2" (interação com API)
+
+API - Recebe "JSON1" e envia "JSON2" (Interação com user)
+    - Envia "End" para storage
+
+
+Funções:
+
 JSON 01
     Contém:
   - Posicionamento do usuário no fluxo do chat
