@@ -27,6 +27,8 @@ Contexto:
      End
           Armazena informações do fim do ciclo utilizando google cloud
 
+Estrutura:
+
 API
 Funções
     Main.js - Possíveis estados e operações matemáticas.
