@@ -4,6 +4,7 @@ APP calculadora com indicadores da construção civil.
 
 Formato de chat, utilizando máquina de estados para o fluxo do chat.
 
+Estrutura:
     
     USER/Site - Envia "JSON1" e recebe "JSON2" (interação com API)
 
