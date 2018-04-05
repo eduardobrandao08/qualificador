@@ -8,7 +8,6 @@ const http = require('http');
 //Variável que define estados
 
 var descompata = JSON.parse('{"estado":"01", , }');
-
 var estado = var descompacta[01]
 
 //Primeiro estado
