@@ -31,4 +31,5 @@ Estrutura:
 
 API
 Funções
+
     Main.js - Possíveis estados e operações matemáticas.
