@@ -20,8 +20,8 @@ JSON 01
   
 JSON 02
     Contém:
-    - Novo posicionamento do usuário no fluxo do chat
-    - Respostas preenchidas pelo usuário (número varia de acordo com o posicionamento no fluxo)
+  - Novo posicionamento do usuário no fluxo do chat
+  - Respostas preenchidas pelo usuário (número varia de acordo com o posicionamento no fluxo)
     
 End
     Armazena informações do fim do ciclo utilizando google cloud
