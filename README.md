@@ -14,12 +14,17 @@ Estrutura:
 
     
 JSON 01
-  - Posicionamento do usuário no fluxo
+    Contém:
+  - Posicionamento do usuário no fluxo do chat
   - Respostas preenchidas pelo usuário (número varia de acordo com o posicionamento no fluxo)
   
 JSON 02
+    Contém:
+    - Novo posicionamento do usuário no fluxo do chat
+    - Respostas preenchidas pelo usuário (número varia de acordo com o posicionamento no fluxo)
+    
 End
-Utilizando google cloud
+    Armazena informações do fim do ciclo utilizando google cloud
 
 API
 Funções
