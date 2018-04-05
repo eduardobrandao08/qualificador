@@ -3,6 +3,7 @@
 APP calculadora com indicadores da construção civil. 
 Formato de chat, utilizando máquina de estados para o fluxo do chat.
 
+Ir em edit para visualizar Estrutura
 Estrutura:
     ---------                  ---------               ---------
    /         /    ------>     /         /             /         /
