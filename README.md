@@ -1,16 +1,17 @@
 # chatbot
 
 APP calculadora com indicadores da construção civil. 
+
 Formato de chat, utilizando máquina de estados para o fluxo do chat.
 
     
-USER/Site - Envia "JSON1" e recebe "JSON2" (interação com API)
+    USER/Site - Envia "JSON1" e recebe "JSON2" (interação com API)
 
-API - Recebe "JSON1" e envia "JSON2" (Interação com user)
-    - Envia "End" para storage
+    API - Recebe "JSON1" e envia "JSON2" (Interação com user)
+        - Envia "End" para storage
 
 
-Funções:
+    Funções:
 
 JSON 01
     Contém:
