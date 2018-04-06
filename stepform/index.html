@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Stepform</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="container" id="myWizard">
+
+    <h3>Stepform Wizard</h3>
+
+    <hr>
+
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5" style="width: 20%;">
+        Step 1 of 4
+      </div>
+    </div>
+
+
+    <ul class="nav">
+      <li class="nav-item">
+        <a href="#step1" class="nav-link active" data-toggle="tab" data-step="1">Step 1</a>
+      </li>
+      <li class="nav-item">
+        <a href="#step2" class="nav-link" data-toggle="tab" data-step="2">Step 2</a>
+      </li>
+      <li class="nav-item">
+        <a href="#step3" class="nav-link" data-toggle="tab" data-step="3">Step 3</a>
+      </li>
+      <li class="nav-item">
+        <a href="#step4" class="nav-link" data-toggle="tab" data-step="4">Step 4</a>
+      </li>
+    </ul>
+    <form class="needs-validation" novalidate>
+      <div class="tab-content">
+        <div class="tab-pane active" id="step1">
+          <div class="form-group">
+            <label for="name">Qual o seu nome</label>
+            <input class="form-control input-lg" name="name" id="name">
+          </div>
+          <a class="btn btn-outline-secondary btn-lg next" href="#">Continue</a>
+        </div>
+        <div class="tab-pane fade" id="step2">
+          <div class="form-group">
+            <label for="cidade">Cidade</label>
+            <input class="form-control input-lg" name="cidade" id="cidade">
+          </div>
+          <a class="btn btn-outline-secondary next" href="#">Continue</a>
+        </div>
+        <div class="tab-pane fade" id="step3">
+          <div class="form-group">
+            <h2>Step 3</h2> Add another step here..
+          </div>
+          <a class="btn btn-outline-secondary next" href="#">Continue</a>
+        </div>
+        <div class="tab-pane fade" id="step4">
+          <div class="form-group">
+            <h2>Step 4</h2> You're Done!
+          </div>
+          <button type="submit" class="btn btn-success first" value="">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <!-- jquery && bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-storage-api/1.9.4/jquery.storageapi.min.js"></script>
+  
+  <script>
+    $( document ).ready(function() {
+      storage=$.localStorage
+
+      $('.next').click(function(){
+        var nextId = $(this).parents('.tab-pane').next().attr("id");
+        $('a[href$='+nextId+']').tab('show');
+
+        // $(this).closest('.tab-pane').parent().parent()
+        // storage.set('data',obj) // Set storage.foo to "value"
+        return false;
+      })
+
+      $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        //update progress
+        var step = $(e.target).data('step');
+        var percent = (parseInt(step) / 4) * 100;
+
+        $('.progress-bar').css({width: percent + '%'});
+        $('.progress-bar').text("Step " + step + " of 5");
+        //e.relatedTarget // previous tab
+      });
+
+      $('form').on('submit', function (e) {
+        var data = $(this).serializeFormJSON();
+        console.log(data);
+
+        /* begin - bloco de codigo para enviar o data para o RDStation */
+        // Codigo aqui
+        /* end */
+        e.preventDefault();
+      })
+      
+      // jQuery function para serializar data do formulário para um json
+      $.fn.serializeFormJSON = function () {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function () {
+            if (o[this.name]) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+      };
+
+    });
+  </script>
+</body>
+
+</html>
