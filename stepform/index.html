@@ -15,7 +15,7 @@
 
   <div class="container" id="myWizard">
 
-    <h3>Stepform Wizard</h3>
+    <h3>Qualificador</h3>
 
     <hr>
 
@@ -63,22 +63,32 @@
 
 
     <!--  // Parte 2 primeira entrega-->
-
+    <form name="calculator" >
         <div class="tab-pane fade" id="step2">
 
           <div class="form-group">
             <label for="cidade">Qual valor médio das obras?</label>
-            <input class="form-control input-lg" name="valor-medio" id="valor-medio">
+            <input class="form-control input-lg" name="valor-medio" id="valor-medio" value="" onClick="document.calculator.ans.value+= value">
           </div>
 
 
           <div class="form-group">
-            <label for="cidade">Como controla as obras? Opções caderno, excel, software</label>
-            <input class="form-control input-lg" name="controla" id="controla">
+            <label for="cidade">Como controla as obras? </label>
+          <!--  <input class="form-control input-lg" name="controla" id="controla">-->
           </div>
 
+         <a href="#" class="btn btn-outline-secondary next" role="button" value="*0.11" id="01"
+         onClick="document.calculator.ans.value+='0.11'">Planilhas</a>
+         <a href="#" class="btn btn-outline-secondary next" role="button" value="*0.116" id="01"
+         onClick="document.calculator.ans.value+='0.116'">Caderno</a>
+         <a href="#" class="btn btn-outline-secondary next" role="button" value="*0.08" id="01"
+         onClick="document.calculator.ans.value+='0.08'">Software de gestão</a>
 
-          <a class="btn btn-outline-secondary next" href="#">Continue</a>
+          <!-- <input type="button" class="btn btn-info" value="Input Button" a class="btn btn-outline-secondary next" href="#"></a>
+          <input type="submit" class="btn btn-info" value="Submit Button" a class="btn btn-outline-secondary next" href="#"></a>
+-->
+
+         <a class="btn btn-outline-secondary next" href="#">Continue</a>
         </div>
 
   <!--  // Parte 3 primeira entrega-->
@@ -87,11 +97,31 @@
           <div class="form-group">
             <h2>Step 3</h2> Você pode economizar
 
+            <input type="textfield" name="ans" value="">
+          <!--    <input type="button" value="1" onClick="document.calculator.ans.value+='1'">
+            <input type="button" value="2" onClick="document.calculator.ans.value+='2'">
+            <input type="button" value="3" onClick="document.calculator.ans.value+='3'">
+            <input type="button" value="+" onClick="document.calculator.ans.value+='+'">
+            <input type="button" value="4" onClick="document.calculator.ans.value+='4'">
+            <input type="button" value="5" onClick="document.calculator.ans.value+='5'">
+            <input type="button" value="6" onClick="document.calculator.ans.value+='6'">
+            <input type="button" value="-" onClick="document.calculator.ans.value+='-'">
+            <input type="button" value="7" onClick="document.calculator.ans.value+='7'">
+            <input type="button" value="8" onClick="document.calculator.ans.value+='8'">
+            <input type="button" value="9" onClick="document.calculator.ans.value+='9'">
+            <input type="button" value="*" onClick="document.calculator.ans.value+='*'">
+            <input type="button" value="/" onClick="document.calculator.ans.value+='/'">
+            <input type="button" value="0" onClick="document.calculator.ans.value+='0'">
+            <input type="reset" value="Reset">
+            <input type="button" value="=" onClick="document.calculator.ans.value=eval(document.calculator.ans.value)">
+            Solution is
+            <input type="textfield" name="ans" value="">
+-->
 
           </div>
           <a class="btn btn-outline-secondary next" href="#">Continue</a>
         </div>
-
+</form>
   <!--  // Parte 4 primeira entrega-->
 
         <div class="tab-pane fade" id="step4">
