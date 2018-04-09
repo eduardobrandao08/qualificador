@@ -2,9 +2,17 @@
 
 APP calculadora com indicadores da construção civil. 
 
-Formato de chat, utilizando máquina de estados para o fluxo do chat.
+Formato de chat, utilizando "carrossel" para o fluxo do chat.
 
-Contexto:
+Simplificado:
+    
+    
+    User preenche campos, dados são armazenados, operações matemáticas são realizadas
+    
+    Exporta para base RD
+    
+    
+Contexto antigo:
     
     USER/Site - Envia "JSON1" e recebe "JSON2" (interação com API)
 
