@@ -19,7 +19,7 @@
 
     <hr>
 
-    <div class="progress">
+    <div class="progress">d
       <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5" style="width: 20%;">
         Step 1 of 4
       </div>
@@ -42,26 +42,58 @@
     </ul>
     <form class="needs-validation" novalidate>
       <div class="tab-content">
+
+
+    <!--  // Parte 1 primeira entrega-->
+
         <div class="tab-pane active" id="step1">
           <div class="form-group">
-            <label for="name">Qual o seu nome</label>
+            <label for="name">Qual o seu nome?</label>
             <input class="form-control input-lg" name="name" id="name">
           </div>
-          <a class="btn btn-outline-secondary btn-lg next" href="#">Continue</a>
-        </div>
-        <div class="tab-pane fade" id="step2">
+
+
           <div class="form-group">
-            <label for="cidade">Cidade</label>
-            <input class="form-control input-lg" name="cidade" id="cidade">
+            <label for="name">Quanto tempo tem de empresa?</label>
+            <input class="form-control input-lg" name="tempo-empresa" id="tempo-empresa">
           </div>
+          <a class="btn btn-outline-secondary btn-lg next" href="#">Continue</a>
+
+        </div>
+
+
+    <!--  // Parte 2 primeira entrega-->
+
+        <div class="tab-pane fade" id="step2">
+
+          <div class="form-group">
+            <label for="cidade">Qual valor médio das obras?</label>
+            <input class="form-control input-lg" name="valor-medio" id="valor-medio">
+          </div>
+
+
+          <div class="form-group">
+            <label for="cidade">Como controla as obras? Opções caderno, excel, software</label>
+            <input class="form-control input-lg" name="controla" id="controla">
+          </div>
+
+
           <a class="btn btn-outline-secondary next" href="#">Continue</a>
         </div>
+
+  <!--  // Parte 3 primeira entrega-->
+
         <div class="tab-pane fade" id="step3">
           <div class="form-group">
-            <h2>Step 3</h2> Add another step here..
+            <h2>Step 3</h2> Você pode economizar
+
+
           </div>
           <a class="btn btn-outline-secondary next" href="#">Continue</a>
         </div>
+
+  <!--  // Parte 4 primeira entrega-->
+
         <div class="tab-pane fade" id="step4">
           <div class="form-group">
             <h2>Step 4</h2> You're Done!
@@ -73,6 +105,7 @@
   </div>
 
 
+
   <!-- jquery && bootstrap -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -81,40 +114,34 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-storage-api/1.9.4/jquery.storageapi.min.js"></script>
-  
+
   <script>
     $( document ).ready(function() {
       storage=$.localStorage
-
       $('.next').click(function(){
         var nextId = $(this).parents('.tab-pane').next().attr("id");
         $('a[href$='+nextId+']').tab('show');
-
         // $(this).closest('.tab-pane').parent().parent()
         // storage.set('data',obj) // Set storage.foo to "value"
         return false;
       })
-
       $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
         //update progress
         var step = $(e.target).data('step');
         var percent = (parseInt(step) / 4) * 100;
-
         $('.progress-bar').css({width: percent + '%'});
         $('.progress-bar').text("Step " + step + " of 5");
         //e.relatedTarget // previous tab
       });
-
       $('form').on('submit', function (e) {
         var data = $(this).serializeFormJSON();
         console.log(data);
-
         /* begin - bloco de codigo para enviar o data para o RDStation */
         // Codigo aqui
         /* end */
         e.preventDefault();
       })
-      
+
       // jQuery function para serializar data do formulário para um json
       $.fn.serializeFormJSON = function () {
         var o = {};
@@ -131,7 +158,6 @@
         });
         return o;
       };
-
     });
   </script>
 </body>
